@@ -6,7 +6,7 @@
 /*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 14:25:34 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/25 16:17:13 by amaazouz         ###   ########.fr       */
+/*   Updated: 2025/10/25 21:37:02 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@ int	countword(char *s, char c)
 {
 	size_t	i;
 	size_t	count;
-	
+
 	i = 0;
 	count = 0;
-	if (!s[i])
+	if (!s)
+		return (0);
+	if (!s)
 		return (0);
 	while (s[i])
 	{
@@ -62,41 +64,67 @@ char	*fill_word(char *s, char c, size_t n)
 	}
 	ptr[i] = '\0';
 	return (ptr);
-}		
+}
+
+void	*ft_free(char **s, size_t k)
+{
+	size_t	i;
+
+	i = 0;
+	if (!s)
+		return (NULL);
+	while (i <= k && s)
+	{
+		free(s[i]);
+		i++;
+	}
+	free(s);
+	return (NULL);
+}
 
 char	**ft_split(char *s, char c)
 {
-	int	count_word;
 	size_t	i;
-	size_t	len;
 	size_t	k;
 	char	**ptr;
 
 	i = 0;
 	k = 0;
-	count_word = countword(s, c);
-	ptr = (char **)malloc(sizeof(char *) * count_word);
+	if (!s)
+		return (NULL);
+	ptr = (char **)malloc(sizeof(char *) * (countword(s, c) + 1));
 	if (!ptr)
 		return (NULL);
 	while (s[i])
 	{
-		ptr[k] = fill_word(s, c, i);
-		len = strlen(ptr[k]);
-		i += len;
-		k++;
+		while (s[i] && s[i] != c)
+		{
+			ptr[k] = fill_word(s, c, i);
+			if (!ptr[k])
+				ft_free(ptr, k);
+			i += strlen(ptr[k++]);
+		}
+		i++;
 	}
 	ptr[k] = NULL;
-	if (!ptr)
-		return (NULL);
-	return (&*ptr);
+	return (ptr);
 }
-
+/*
 int	main(void)
 {
-	char	d[40] = "    je ne veux pas    perdre";
+	char	d[40] = "  /  /65  4  ";
 	char	**l;
+	int	i;
 	
-	l = ft_split(d, ' ');
-	printf("%s", l[10]);
+	l = ft_split(d, '/');
+	i = 0;
+	if (!l)
+		return (0);
+	while (l[i])
+	{
+		printf("%s\n", l[i]);
+		i++;
+	}
+	ft_free(l, i);
 	return (0);
-}
+}*/
