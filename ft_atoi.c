@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaazouz <amaazouz@student.42belgium.      +#+  +:+       +#+        */
+/*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 19:40:10 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/19 20:49:38 by amaazouz         ###   ########.fr       */
+/*   Updated: 2025/10/30 12:50:10 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,13 @@ int	ft_atoi(const char *str)
 	}
 	return (sign * res);
 }
-/*
-int	main(void)
-{
-	char	d[20] = "   dddd4551";
 
-	printf("%d", ft_atoi(d));
-	return (0);
-}*/
+// int	main(void)
+// {
+// char	d[100] = " -21474";
+// char	d2[100] = " -21474";
+
+// 	printf("%d\n", ft_atoi(d));
+// 	printf("%d\n", atoi(d2));
+// 	return (0);
+// }

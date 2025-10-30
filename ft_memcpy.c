@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaazouz <amaazouz@student.s19.be>         +#+  +:+       +#+        */
+/*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 14:23:40 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/18 17:43:45 by amaazouz         ###   ########.fr       */
+/*   Updated: 2025/10/28 15:21:04 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,19 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	str = (const unsigned char *) src;
 	dst = (unsigned char *) dest;
-	while (n > 0)
+	while (n--)
 	{
 		dst[i] = str[i];
 		i++;
-		n--;
 	}
 	return (dest);
 }
 /*
 int	main(void)
 {
-	char d[40] = "d";
+	char d[40] = "diii";
 
-	ft_memcpy(d, "momo", 12);
+	ft_memcpy(d, "momo", 1);
 	printf("%s", d);
 	return (0);
-}*/	
+}*/

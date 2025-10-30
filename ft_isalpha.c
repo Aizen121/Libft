@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaazouz <amaazouz@student.s19.be>         +#+  +:+       +#+        */
+/*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 20:22:01 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/17 15:25:52 by amaazouz         ###   ########.fr       */
+/*   Updated: 2025/10/28 14:34:20 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 int	ft_isalpha(int c)
 {
 	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
+		return (c);
 	return (0);
 }
 /*
 int	main(void)
 {
-
-	printf("%d", ft_isalpha('b'));
-	return(0);
-}*/
+	printf("%d", ft_isalpha('a'));
+	return (0);
+}
+*/

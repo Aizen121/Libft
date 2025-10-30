@@ -3,30 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaazouz <amaazouz@student.42belgium.      +#+  +:+       +#+        */
+/*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 17:09:39 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/20 17:10:05 by amaazouz         ###   ########.fr       */
+/*   Updated: 2025/10/28 14:31:09 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdint.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*str;
 
-	if (size != 0 && nmemb > SIZE_MAX / size)
+	if (size != 0 && nmemb > 2147483647 / size)
 		return (NULL);
-	if (size == 0 || nmemb == 0)
-	{
-		str = malloc(0);
-		return (str);
-	}
 	str = malloc(size * nmemb);
-	bzero (str, nmemb * size);
+	if (!str)
+		return (NULL);
+	ft_bzero (str, nmemb * size);
 	return (str);
 }
 /*
@@ -34,8 +29,8 @@ int	main(void)
 {
 	char	*d = "dodode";
 
-	d = ft_calloc(0, 4);
-	memset(d, 'x', 10);
+	d = ft_calloc(0, 0);
+	ft_memset(d, 'x', 2);
 	printf("%s", d);
 	free(d);
 	return (0);

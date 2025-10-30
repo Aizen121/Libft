@@ -6,7 +6,7 @@
 /*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 18:02:42 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/13 13:33:17 by amaazouz         ###   ########.fr       */
+/*   Updated: 2025/10/28 14:19:02 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	int		i;	
+	size_t	i;	
 	char	*str;
 
 	str = (char *)s;
 	i = 0;
-	while (n > 0)
+	while (i < n)
 	{
-		str[i] = '\0';
-		str++;
-		n--;
+		str[i] = 0;
+		i++;
 	}
 }

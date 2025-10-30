@@ -6,7 +6,7 @@
 /*   By: amaazouz <amaazouz@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 13:24:55 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/18 17:40:05 by amaazouz         ###   ########.fr       */
+/*   Updated: 2025/10/27 21:20:01 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	*ft_memset(void *s, int c, size_t n)
 int	main(void)
 {
 	char	d[10] = "dododod";
-	ft_memset(d, 'a', 5);
+	ft_memset(NULL, 'a', 5);
 		
 	printf("%s", d);
 	return (0);

@@ -1,53 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/26 19:52:35 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/30 13:14:27 by amaazouz         ###   ########.fr       */
+/*   Created: 2025/10/27 17:28:17 by amaazouz          #+#    #+#             */
+/*   Updated: 2025/10/30 13:14:15 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned int	i;
-	char			*str;
+	size_t	i;
+	size_t	j;
+	size_t	lens1;
+	size_t	lens2;
+	char	*str;
 
 	i = 0;
-	str = (char *)malloc(sizeof(char *) * (ft_strlen(s) + 1));
+	j = 0;
+	lens1 = ft_strlen(s1);
+	lens2 = ft_strlen(s2);
+	if (!s1 || !s2)
+		return (NULL);
+	str = (char *)malloc(sizeof(char *) * (lens1 + lens2 + 1));
 	if (!str)
 		return (NULL);
-	while (i < ft_strlen(s))
+	while (s1[i])
 	{
-		str[i] = (*f)(i, s[i]);
+		str[i] = s1[i];
 		i++;
 	}
+	while (s2[j])
+		str[i++] = s2[j++];
 	str[i] = '\0';
 	return (str);
 }
 /*
-char	ft_fonction(unsigned int i, char c)
-{
-	if (c == ' ')
-		return ('b');
-	if (i % 2 == 0)
-		return (c + 1);
-	else
-		return (c);
-}
-
 int	main(void)
 {
-	char	*src = "ab cde";
-	char	*res;
-	
-	printf("Original : %s\n", src);
-	res = ft_strmapi(src, &ft_fonction);
-	printf("original: %s\n", src);
-	printf("new: %s\n", res);
+	char	d[20] = "didi";
+
+	printf("%s", ft_strjoin(d, "bibi"));
 	return (0);
 }*/

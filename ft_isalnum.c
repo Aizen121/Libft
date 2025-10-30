@@ -6,7 +6,7 @@
 /*   By: amaazouz <amaazouz@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 15:12:42 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/17 15:24:33 by amaazouz         ###   ########.fr       */
+/*   Updated: 2025/10/27 21:01:28 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	ft_isalnum(int c)
 {
-	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+	if (ft_isdigit(c) || ft_isalpha(c))
 		return (1);
 	return (0);
 }
 /*
 int	main(void)
 {
-	printf("%d", ft_isalnum('4'));
+	printf("%d", ft_isalnum(' '));
 	return (0);
 }*/

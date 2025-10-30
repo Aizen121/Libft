@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaazouz <amaazouz@student.s19.be>         +#+  +:+       +#+        */
+/*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:51:31 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/16 12:49:52 by amaazouz         ###   ########.fr       */
+/*   Updated: 2025/10/28 16:40:32 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
@@ -19,7 +18,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	l;
 
 	i = 0;
-	l = strlen(src);
+	l = ft_strlen(src);
 	if (size > 0)
 	{
 		while (src[i] && i < size - 1)

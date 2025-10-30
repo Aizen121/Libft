@@ -6,7 +6,7 @@
 /*   By: amaazouz <amaazouz@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 21:15:43 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/17 15:26:13 by amaazouz         ###   ########.fr       */
+/*   Updated: 2025/10/27 20:55:43 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	ft_isdigit(int c)
 {
-	if (c >= '0' && c <= '9')
+	if (c >= 48 && c <= 57)
 		return (1);
 	return (0);
 }
-
+/*
 int	main(void)
 {
-	printf("%d", ft_isdigit('5'));
+	printf("%d", ft_isdigit('d'));
 	return (0);
-}
+}*/

@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaazouz <amaazouz@student.42belgium.      +#+  +:+       +#+        */
+/*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 22:14:15 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/26 18:22:06 by amaazouz         ###   ########.fr       */
+/*   Updated: 2025/10/30 12:51:47 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
-int	ft_lenght(int n)
+static int	ft_lenght(int n)
 {
 	int	count;
 
@@ -63,9 +61,9 @@ char	*ft_itoa(int n)
 	}
 	return (ptr);
 }
-/*
-int	main(void)
-{
-	printf("%s", ft_itoa(7483649));
-	return(0);
-}*/
+// 
+// int	main(void)
+// {
+// 	printf("%s\n", ft_itoa(2147483649));
+// 	return (0);
+// }

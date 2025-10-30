@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaazouz <amaazouz@student.42belgium.      +#+  +:+       +#+        */
+/*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 16:43:54 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/19 17:01:36 by amaazouz         ###   ########.fr       */
+/*   Updated: 2025/10/29 23:51:28 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -29,11 +29,11 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-/*
-int	main(void)
-{
-	char	d[30] = "dodol";
+// 
+// int	main(void)
+// {
+// 	char	d[30] = "dodol";
 
-	printf("%p", ft_memchr(d, 'l', 7));
-	return (0);
-}*/
+// 	printf("%p", ft_memchr(d, 'o', 7));
+// 	return (0);
+// }

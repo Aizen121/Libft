@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaazouz <amaazouz@student.42belgium.      +#+  +:+       +#+        */
+/*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 12:39:36 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/20 13:02:03 by amaazouz         ###   ########.fr       */
+/*   Updated: 2025/10/30 13:14:07 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#include <string.h>
 
 char	*ft_strdup(const char *s)
 {
@@ -20,9 +18,9 @@ char	*ft_strdup(const char *s)
 	size_t	len;
 	size_t	i;
 
-	len = strlen(s) + 1;
+	len = ft_strlen(s) + 1;
 	i = 0;
-	str = (char *)malloc(sizeof(char) * len);
+	str = (char *)malloc(sizeof(char *) * len);
 	if (str == NULL)
 		return (NULL);
 	while (s[i])
@@ -41,4 +39,5 @@ int	main(void)
 
 	printf("%s", copie);
 	return (0);
-}*/
+}
+*/

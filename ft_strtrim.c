@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaazouz <amaazouz@student.42belgium.      +#+  +:+       +#+        */
+/*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 11:12:42 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/26 18:25:09 by amaazouz         ###   ########.fr       */
+/*   Updated: 2025/10/30 13:12:18 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -22,10 +21,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	start = 0;
-	end = strlen(s1);
-	while (s1[start] && strchr(set, s1[start]) != NULL)
+	end = ft_strlen(s1);
+	while (s1[start] && ft_strchr(set, s1[start]) != NULL)
 		start++;
-	while (end > start && strchr(set, s1[end - 1]) != NULL)
+	while (end > start && ft_strchr(set, s1[end - 1]) != NULL)
 		end--;
 	str = (char *)malloc(sizeof(char *) * (end - start + 1));
 	if (str == NULL)
@@ -39,11 +38,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str[i] = '\0';
 	return (str);
 }
-/*
-int	main(void)
-{
-	char	d[40] = "Hello World";
 
-	printf("%s", ft_strtrim(d, "Hde "));
-	return (0);
-}*/
+// int	main(void)
+// {
+// 	char	d[40] = "Hello World";
+
+// 	printf("%s", ft_strtrim(d, "Hde "));
+// 	return (0);
+// }
