@@ -6,7 +6,7 @@
 /*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 22:50:00 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/30 15:04:20 by amaazouz         ###   ########.fr       */
+/*   Updated: 2025/10/31 15:39:36 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,14 +93,15 @@ char	**ft_split(char *s, char c)
 		return (NULL);
 	while (s[i])
 	{
-		while (s[i] && s[i] != c)
+		if (s[i] != c)
 		{
 			ptr[k] = fill_word(s, c, i);
 			if (!ptr[k])
 				return (ft_free(ptr, k));
 			i += ft_strlen(ptr[k++]);
 		}
-		i++;
+		else
+			i++;
 	}
 	ptr[k] = NULL;
 	return (ptr);
@@ -117,7 +118,7 @@ char	**ft_split(char *s, char c)
 // 		return (0);
 // 	while (l[i])
 // 	{
-// 		printf(">%s<\n", l[i]);
+// 		printf("%s\n", l[i]);
 // 		i++;
 // 	}
 // 	ft_free(l, i);

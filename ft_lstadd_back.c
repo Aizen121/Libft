@@ -1,48 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 18:15:46 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/31 13:20:50 by amaazouz         ###   ########.fr       */
+/*   Created: 2025/11/05 17:38:48 by amaazouz          #+#    #+#             */
+/*   Updated: 2025/11/05 18:54:07 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t	l;
-	size_t	i;
-	char	*str;
 
-	if (!s)
-		return (NULL);
-	l = ft_strlen(s) - start;
-	i = 0;
-	if (start > ft_strlen(s))
-		return (ft_strdup(""));
-	if (l >= len)
-		l = len;
-	str = (char *)malloc(sizeof(char) * (l + 1));
-	if (!str)
-		return (NULL);
-	while (s[start] && i < len)
+	if (!lst || !new)
+		return ;
+	if (!(*lst))
+		*lst = new;
+	else
 	{
-		str[i] = s[start];
-		i++;
-		start++;
+		ft_lstlast(*lst)->next = new;
 	}
-	str[i] = '\0';
-	return (str);
 }
 //
 // int	main(void)
 // {
-// 	char	d[20] = "d42d";
-
-// 	printf("%s", ft_substr(d, 2, 8));
+// 	t_list	*lst = NULL;
+// 	t_list  *last;
+// 	ft_lstadd_front(&lst, ft_lstnew("Hello"));
+// 	ft_lstadd_front(&lst, ft_lstnew("word"));
+// 	ft_lstadd_front(&lst, ft_lstnew("!!"));
+// 	ft_lstadd_back(&lst, ft_lstnew("dodo"));
+// 	last = ft_lstlast(lst);
+// 	printf("%s", (char *)last->content);
 // 	return (0);
 // }

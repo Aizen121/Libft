@@ -1,43 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaazouz <amaazouz@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 12:39:36 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/31 13:19:19 by amaazouz         ###   ########.fr       */
+/*   Created: 2025/11/04 15:56:16 by amaazouz          #+#    #+#             */
+/*   Updated: 2025/11/04 22:46:46 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+int	ft_lstsize(t_list *lst)
 {
-	char	*str;
-	size_t	len;
-	size_t	i;
-
-	len = ft_strlen(s) + 1;
+	int	i;
+	t_list	*tmp;
+	
+	tmp = lst;
 	i = 0;
-	str = (char *)malloc(sizeof(char) * len);
-	if (str == NULL)
-		return (NULL);
-	while (s[i])
+	while (tmp)
 	{
-		str[i] = s[i];
+		tmp = tmp->next;
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	return(i);
 }
 /*
 int	main(void)
 {
-	char	d[20] = "djd3";
-	char	*copie = ft_strdup(d);
+	t_list	*lst = NULL;
 
-	printf("%s", copie);
+	ft_lstadd_front(&lst, ft_lstnew("Hello"));
+	ft_lstadd_front(&lst, ft_lstnew("word"));
+	ft_lstadd_front(&lst, ft_lstnew("!!"));
+	printf("%d", ft_lstsize(lst));
 	return (0);
-}
-*/
+}*/

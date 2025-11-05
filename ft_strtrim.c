@@ -1,3 +1,6 @@
+
+
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -6,7 +9,7 @@
 /*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 11:12:42 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/30 13:12:18 by amaazouz         ###   ########.fr       */
+/*   Updated: 2025/10/31 13:20:55 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +29,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (end > start && ft_strchr(set, s1[end - 1]) != NULL)
 		end--;
-	str = (char *)malloc(sizeof(char *) * (end - start + 1));
+	str = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (str == NULL)
 		return (NULL);
 	while (start < end)

@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaazouz <amaazouz@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 17:09:39 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/31 13:29:27 by amaazouz         ###   ########.fr       */
+/*   Created: 2025/11/03 19:38:12 by amaazouz          #+#    #+#             */
+/*   Updated: 2025/11/03 21:25:28 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+t_list	*ft_lstnew(void *content)
 {
-	void	*str;
+	t_list	*elem;
 
-	if (size != 0 && nmemb > 2147483647 / size)
+	elem = malloc(sizeof(t_list));
+	if (!elem)
 		return (NULL);
-	str = malloc(size * nmemb);
-	if (!str)
-		return (NULL);
-	ft_bzero (str, nmemb * size);
-	return (str);
+	elem->content = content;
+	elem->next = NULL;
+	return (elem);
 }
 /*
 int	main(void)
 {
-	char	*d = "dodode";
+	char	*str_content = "Salut 42";
+	t_list	*node1 = ft_lstnew(str_content);
 
-	d = ft_calloc(0, 0);
-	ft_memset(d, 'x', 2);
-	printf("%s", d);
-	free(d);
+	node1->content;
+	printf("%s",(char *)node1->content);
 	return (0);
-}*/
+}
+*/	

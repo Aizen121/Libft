@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 17:09:39 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/31 13:29:27 by amaazouz         ###   ########.fr       */
+/*   Created: 2025/11/04 22:49:25 by amaazouz          #+#    #+#             */
+/*   Updated: 2025/11/04 23:44:48 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+t_list	*ft_lstlast(t_list *lst)
 {
-	void	*str;
+	t_list	*tmp;
 
-	if (size != 0 && nmemb > 2147483647 / size)
+	if (!lst)
 		return (NULL);
-	str = malloc(size * nmemb);
-	if (!str)
-		return (NULL);
-	ft_bzero (str, nmemb * size);
-	return (str);
+	tmp = lst;
+	while (tmp->next)
+		tmp = tmp->next;
+	return (tmp);
 }
-/*
-int	main(void)
-{
-	char	*d = "dodode";
 
-	d = ft_calloc(0, 0);
-	ft_memset(d, 'x', 2);
-	printf("%s", d);
-	free(d);
-	return (0);
-}*/
+// int	main(void)
+// {
+// 	t_list	*lst = NULL;
+
+// 	ft_lstadd_front(&lst, ft_lstnew("Hello"));
+// 	ft_lstadd_front(&lst, ft_lstnew("word"));
+// 	ft_lstadd_front(&lst, ft_lstnew("!!"));
+// 	printf("%s", (char *)ft_lstlast(lst)->content);
+// 	return (0);
+// }

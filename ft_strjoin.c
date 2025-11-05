@@ -6,7 +6,7 @@
 /*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 17:28:17 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/30 13:14:15 by amaazouz         ###   ########.fr       */
+/*   Updated: 2025/10/31 13:19:58 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	lens2 = ft_strlen(s2);
 	if (!s1 || !s2)
 		return (NULL);
-	str = (char *)malloc(sizeof(char *) * (lens1 + lens2 + 1));
+	str = (char *)malloc(sizeof(char) * (lens1 + lens2 + 1));
 	if (!str)
 		return (NULL);
 	while (s1[i])

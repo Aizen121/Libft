@@ -6,7 +6,7 @@
 /*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 22:14:15 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/30 12:51:47 by amaazouz         ###   ########.fr       */
+/*   Updated: 2025/10/31 15:17:37 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,6 @@ char	*ft_itoa(int n)
 // 
 // int	main(void)
 // {
-// 	printf("%s\n", ft_itoa(2147483649));
+// 	printf("%s\n", ft_itoa(0));
 // 	return (0);
 // }

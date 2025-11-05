@@ -6,7 +6,7 @@
 /*   By: amaazouz <amaazouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 21:41:33 by amaazouz          #+#    #+#             */
-/*   Updated: 2025/10/13 13:45:07 by amaazouz         ###   ########.fr       */
+/*   Updated: 2025/10/31 13:30:24 by amaazouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
